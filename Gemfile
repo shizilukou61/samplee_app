@@ -9,12 +9,17 @@ gem 'rails', '4.0.0'
 group :development, :test do
   gem 'sqlite3', '1.3.8'
   gem 'rspec-rails', '2.13.1' #这个gem放在了开发组中,这样可以使用Rspec相关的生成器
+  gem 'guard-rspec', '2.5.0'
+  gem 'spork-rails', '4.0.0'
+  gem 'guard-spork', '1.5.0'
+  gem 'childprocess','0.3.6'
 end  			      #不用单独安装rspec（是rspec-rails的依赖件,会自动安装）	
 
 
 group :test do
   gem 'selenium-webdriver', '2.35.1' #这个是capybara的依赖库
   gem 'capybara', '2.1.0'     #可以使用类似英语中的句发编写模拟与应用程序交互的代码。
+  gem 'libnotify', '0.8.0'
 end
 
 # Use SCSS for stylesheets
@@ -54,7 +59,7 @@ group :doc do
 end
 
 group :production do
- gem 'pg', '0.15.1'
+  gem 'pg', '0.15.1'
 end
 
 # Use ActiveModel has_secure_password
