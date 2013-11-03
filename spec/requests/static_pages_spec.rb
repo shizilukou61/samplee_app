@@ -95,7 +95,8 @@ describe "Static pages" do
   describe "Contact" do 
     before { visit contact_path }
 
-    it { should have_content('Contact Us')}
+    #it { should have_content('Contact Us')}
+    it { should have_selector('h1', text: 'Contact Us')}
     it { should have_title(full_title('Contact Us'))}
    
 =begin
@@ -111,6 +112,22 @@ describe "Static pages" do
 	    expect(page).to have_title("Ruby on Rails Tutorial Sample App | Contact Us")
     end
 =end
+  end
+
+  it "should have the right links on the layout" do
+    visit root_path
+    click_link "About"
+    expect(page).to have_title(full_title('About Us'))
+    click_link "Help"
+    expect(page).to have_title(full_title('Help'))
+
+    click_link "Contact"
+    expect(page).to have_title(full_title('Contact Us'))
+    
+    click_link "Home"
+
+    click_link "Sign up now!"
+    expect(page).to have_title(full_title('Sign up')) 
   end
 end
 
