@@ -1,0 +1,14 @@
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= 
+           #定义gravatar_for方法，返回指定用户的Gravatar头像
+           gravatar_for @user
+        %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+</div>

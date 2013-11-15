@@ -24,6 +24,7 @@ group :test do
   gem 'selenium-webdriver', '2.35.1' #这个是capybara的依赖库
   gem 'capybara', '2.1.0'     #可以使用类似英语中的句发编写模拟与应用程序交互的代码。
   gem 'libnotify', '0.8.0'
+  gem 'factory_girl_rails', '4.2.1'
 end
 
 # Use SCSS for stylesheets

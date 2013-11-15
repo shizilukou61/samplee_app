@@ -11,8 +11,17 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container">
+      <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
       <%= yield %>
       <%= render 'layouts/footer' %>
+     <%= #把调试信息加入网站布局中(????)
+         #作用是什么？
+         #使用rails内置的debug方法和params变量在每一页
+         #显示对开发有帮助的信息
+         debug(params) if Rails.env.development? 
+     %>
     </div>
   </body>
 </html>
